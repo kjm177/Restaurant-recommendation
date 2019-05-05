@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Yelp Restaurant recommendations</title>
+   <link rel="stylesheet" href="{{ url_for('static',     filename='css/template.css') }}">
+ </head>
+ <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Yelp Restaurant recommendations</h1>
+		<p> Login: </p>
+			<form action = "http://localhost:5000/main">
+			  User hashCode:<br>
+			  <input type="text" name="userhashCode" value="">
+			  <br><br>
+			  <input type="submit" value="Submit">
+			</form> 
+      </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+ </body>
+</html>

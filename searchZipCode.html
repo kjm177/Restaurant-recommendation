@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Tutorial</title>
+   <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    {% extends "main.html" %}
+    {% block content %}
+    <h1> Searching restaurants in zip code </h1>
+	<form action="http://localhost:5000/save_search_query"  method = "POST">
+	  User ID:<br>
+	  <input type="text" name="userID" value="">
+	  <br>
+	  Zipcode:<br>
+	  <input type="text" name="zipcode" value="">
+	  <br><br>
+	  <input type="submit" value="Submit">
+	</form> 
+    {% endblock %}
+  </body>
+</html>

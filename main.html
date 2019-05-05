@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Yelp Restaurant recommendations</title>
+   <link rel="stylesheet" href="styles.css">
+ </head>
+ <body background="http://www.realdetroitweekly.com/wp-content/uploads/2017/06/Restaurants.jpg">
+    <header>
+      <div class="container">
+        <h1 class="logo">Yelp Restaurant recommendations</h1>
+
+		<br>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('searchZipCode') }}">Search a zip code</a></li>
+            <li><a href="{{ url_for('newReview') }}">Enter new review</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+ </body>
+</html>
