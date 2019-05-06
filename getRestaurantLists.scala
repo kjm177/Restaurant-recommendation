@@ -33,7 +33,6 @@ val recommendDF = RDD2.map{case (s0, s1) => recommends(s0, s1)}.toDF()
 val recommendDF2 = recommendDF.join(restaurantDF, "restaurant_id_hash")
 recommendDF2.repartition(1).write.format("com.databricks.spark.csv").option("header", "true").save("r1")
 
-s
 val toprated_zipDF = masterDF.filter($"postal_code" === zip && $"review_count" >= 10).groupBy("restaurant_id_hash").agg(avg("review_stars")).toDF("restaurant_id_hash", "avg_rating") 
 val toprated_zipDF2 = toprated_zipDF.sort(toprated_zipDF("avg_rating").desc).limit(numOfRecommendations)
 val toprated_zipDF3 = toprated_zipDF2.join(restaurantDF, "restaurant_id_hash")
