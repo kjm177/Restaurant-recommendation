@@ -40,9 +40,9 @@ val toprated_zipDF3 = toprated_zipDF2.join(restaurantDF, "restaurant_id_hash")
 
 
 val cuisine_ratingDF = masterDF.filter($"postal_code" === zip).groupBy("cuisines").agg(avg("review_stars")).toDF("cuisine", "avg_rating")
-val top_rated_cuisine = cuisine_ratingDF.sort(cuisine_ratingDF("avg_rating").desc).take(1)
-val topcuisine:String = top_rated_cuisine(0)(0).toString
-val cuisine_ratingDF2 = masterDF.filter($"cuisines" ===  topcuisine && $"review_count" >= 10).groupBy("restaurant_id_hash").agg(avg("review_stars")).toDF("restaurant_id_hash", "avg_rating") 
-val cuisine_ratingDF3 = cuisine_ratingDF2.sort(cuisine_ratingDF2("avg_rating").desc).limit(numOfRecommendations)
-val cuisine_ratingDF4 = cuisine_ratingDF3.join(restaurantDF, "restaurant_id_hash")
+// val top_rated_cuisine = cuisine_ratingDF.sort(cuisine_ratingDF("avg_rating").desc).take(1)
+// val topcuisine:String = top_rated_cuisine(0)(0).toString
+// val cuisine_ratingDF2 = masterDF.filter($"cuisines" ===  topcuisine && $"review_count" >= 10).groupBy("restaurant_id_hash").agg(avg("review_stars")).toDF("restaurant_id_hash", "avg_rating") 
+// val cuisine_ratingDF3 = cuisine_ratingDF2.sort(cuisine_ratingDF2("avg_rating").desc).limit(numOfRecommendations)
+// val cuisine_ratingDF4 = cuisine_ratingDF3.join(restaurantDF, "restaurant_id_hash")
 // cuisine_ratingDF4.rdd.saveAsTextFile("cuisinerated")
