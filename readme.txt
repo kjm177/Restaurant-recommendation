@@ -28,5 +28,5 @@ spark-shell --packages com.databricks:spark-csv_2.10:1.5.0
 :load getRestaurantLists.scala
 
 
-5. Load the csv file generated in the r1 folder into tableau
+5. Load the csv file generated in the r1 folder as the data source into the given tableau worksheet (LasVegas_Recommendations1.twb)
 
