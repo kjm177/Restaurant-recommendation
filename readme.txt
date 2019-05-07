@@ -6,7 +6,7 @@ python RestaurantRecommendation.py
 
 
 2. Navigate and input queries on the web application 
-Assumption: Inputs are always calid userIDs, restaurantIDs and zipcodes
+Assumption: Inputs are always valid userIDs, restaurantIDs and zipcodes
 This will generate 2 csv files in the local folder: newReview.csv and searchList.csv
 
 3. Put the 2 files generated in step 2 in hdfs
