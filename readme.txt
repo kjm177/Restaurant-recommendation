@@ -1,5 +1,13 @@
 Readme for Yelp - restaurant recommendation system
 
+0. Dataset should be present in hdfs in folder: "project/data/"
+(source: https://www.kaggle.com/yelp-dataset/yelp-dataset)
+Put these files in hdfs from above data source:
+
+yelp_academic_dataset_business.json
+yelp_academic_dataset_user.json
+yelp_academic_dataset_review.json
+
 1. Install flask package and run front-end on local machine (Since this is not possible on dumbo)
 
 python RestaurantRecommendation.py
